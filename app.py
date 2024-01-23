@@ -7,13 +7,12 @@ app.config["SECRET_KEY"] = "this-is-secret"
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-    # board = boggle_game.make_board()
-    # session["board"] = board
-    # highscore = session.get("highscore", 0)
-    # nplays = session.get("nplays", 0)
+    new_board = make_board() 
+    return render_template("index.html", new_board=new_board)
 
 
 
-boggle_game = Boggle()
 
+def make_board():
+    board = Boggle().make_board()
+    return board
