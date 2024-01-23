@@ -143,3 +143,10 @@ class Boggle():
         # Sad panda.
 
         return False
+         
+
+board = Boggle
+board = board.make_board(board)
+print(board)
+
+
