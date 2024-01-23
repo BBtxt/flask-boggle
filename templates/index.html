@@ -2,4 +2,22 @@
 
 {% block content %}
     <h1>Welcome to the Home Page</h1>
-{% endblock %}
+    {% for rows in new_board %}
+    <div>
+        {{ rows }}
+    </div>
+    {% endfor %}
+
+    <div id="guess">
+        <form>
+            <input type="text" name="guess" placeholder="Enter your guess">
+            <input type="submit" value="Guess">
+    </div>
+{% endblock %} 
+
+<script>
+    var guess = document.getElementById("guess");
+    guess.addEventListener("click", function(){
+        console.log("clicked");
+    })
+</script>
