@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to the Home Page</h1>
-    {% for rows in new_board %}
+    <h1>Boogle</h1>
     <div>
-        {{ rows }}
+        <table class="board ">
+            <tbody>
+                {% for row in new_board %}
+                <tr>
+                    {% for letter in row %}
+                    <td>{{ letter }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
     </div>
-    {% endfor %}
 
     <div>
-        <form id="guess">
+        <form id="guess" method="POST">
             <input type="text" required="true" maxlength="5" name="guess" id="guess-input" placeholder="Enter your guess">
             <input type="submit"  value="Guess">
     </div>
