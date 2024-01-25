@@ -59,7 +59,7 @@ class Boggle():
             return False
 
         # Base case: we've used this letter before in this current path
-
+   
         if (y, x) in seen:
             return False
 
@@ -145,8 +145,15 @@ class Boggle():
         return False
          
 
-board = Boggle
-board = board.make_board(board)
-print(board)
+# def print_board(board):
+#     for row in board:
+#         print(" ".join(row))
+        
+# board = Boggle()  # create an instance of Boggle
+# matrix = board.make_board()  # call make_board on the instance
+# print_board(matrix)
+# check = board.check_valid_word(matrix, "cat")  # call check_valid_word on the instance
+# print(check)
+
 
 
