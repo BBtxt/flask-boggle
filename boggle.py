@@ -145,15 +145,6 @@ class Boggle():
         return False
          
 
-# def print_board(board):
-#     for row in board:
-#         print(" ".join(row))
-        
-# board = Boggle()  # create an instance of Boggle
-# matrix = board.make_board()  # call make_board on the instance
-# print_board(matrix)
-# check = board.check_valid_word(matrix, "cat")  # call check_valid_word on the instance
-# print(check)
-
+# 
 
 

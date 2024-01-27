@@ -14,12 +14,20 @@
                 {% endfor %}
             </tbody>
         </table>
-
     </div>
-
     <div>
         <form id="guess" method="POST">
             <input type="text" required="true" maxlength="5" name="guess" id="guess-input" placeholder="Enter your guess">
             <input type="submit"  value="Guess">
+    </div>
+    <div id="result">
+        <table>
+            <tr>
+              <th>Guess</th>
+              <th>Result</th>
+            </tr>
+            <tr id="guess_result_table">
+              </tr>
+          </table>
     </div>
 {% endblock %} 

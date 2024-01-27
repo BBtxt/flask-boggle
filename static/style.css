@@ -32,3 +32,22 @@ h1 {
     width: 1.5em;
     height: 1.5em;
   }
+
+  #result table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#result th, #result td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 50%;
+}
+
+#result th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: white;
+}

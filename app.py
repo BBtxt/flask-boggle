@@ -28,7 +28,7 @@ def check_guess():
         
         is_valid = check_word(current_board, guess)
 
-        return jsonify({'butt': is_valid})  # return a response
+        return jsonify({'guess': is_valid})  # return a response
     except Exception as e:
         print(e)
         return str(e), 500
