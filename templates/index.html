@@ -18,7 +18,7 @@
     <div>
         <form id="guess" method="POST">
             <input type="text" required="true" maxlength="5" name="guess" id="guess-input" placeholder="Enter your guess">
-            <input type="submit"  value="Guess">
+            <input type="submit" id="submitBtn" value="Guess">
     </div>
     <div id="result">
         <table>
@@ -29,5 +29,17 @@
             <tr id="guess_result_table">
               </tr>
           </table>
+    </div>
+    <div id="score">
+        <h2>Score: <span id="score_value">0</span></h2>
+    </div>
+    <div id="timer">
+        <h2>Time left: <span id="timer_value">10</span></h2>
+    </div>
+    <div id="highscore">
+        <h2>Highscore: <span id="highscore_value">0</span></h2>
+    </div>
+    <div>
+        <button id="restart ">Restart</button>
     </div>
 {% endblock %} 
