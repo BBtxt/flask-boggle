@@ -4,6 +4,7 @@ const $guessForm = $("#guess");
 const $resultTable = $("#result table");
 const $timerVal = $("#timer_value");
 const $submitBtn = $("#submitBtn");
+const $restartBtn = $("#restartBtn");
 
 let timer;
 
@@ -45,3 +46,7 @@ function handleGameTimer() {
     }
   }, 1000);
 }
+
+$restartBtn.on("click", function () {
+  location.reload();
+});
