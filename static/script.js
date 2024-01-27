@@ -5,6 +5,7 @@ const $resultTable = $("#result table");
 const $timerVal = $("#timer_value");
 const $submitBtn = $("#submitBtn");
 const $restartBtn = $("#restartBtn");
+const $scoreVal = $("#score_value");
 
 let timer;
 
@@ -25,6 +26,9 @@ async function checkGuess(evt) {
     console.log("resp", resp);
     console.log("resp data", resp.data.guess);
     let result = resp.data.guess;
+    if (result === "ok"){
+        $scoreVal.text(parseInt($scoreVal.text()) + 1);
+    }
     let newRow = `<tr><td>${submittedGuess}</td><td>${result}</td></tr>`; // create a new row with two cells
     $resultTable.append(newRow);
     submittedGuess = $("#guess-input").val("");
@@ -50,3 +54,4 @@ function handleGameTimer() {
 $restartBtn.on("click", function () {
   location.reload();
 });
+
