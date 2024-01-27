@@ -33,6 +33,16 @@ def check_guess():
         print(e)
         return str(e), 500
 
+@app.route('/update-high-score', methods=['POST'])
+def update_high_score():
+    data = request.get_json()
+    high_score = data.get('highScore')
+    if high_score is not None:
+        session['highScore'] = high_score
+        return {'message': 'High score updated successfully'}, 200
+    else:
+        return {'message': 'No high score provided'}, 400
+
 def check_word(board, guess):
     result = boggle.check_valid_word(board, guess)  # call check_valid_word on the boggle instance
     return result

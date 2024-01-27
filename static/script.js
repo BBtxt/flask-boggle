@@ -27,7 +27,17 @@ async function checkGuess(evt) {
     console.log("resp data", resp.data.guess);
     let result = resp.data.guess;
     if (result === "ok"){
-        $scoreVal.text(parseInt($scoreVal.text()) + 1);
+        let newScore = parseInt($scoreVal.text()) + 1;
+        $scoreVal.text(newScore);
+
+        // Check if the new score is higher than the high score
+        let highScore = sessionStorage.getItem('highScore');
+        if (!highScore || newScore > highScore) {
+          // Update the high score
+          sessionStorage.setItem('highScore', newScore);
+          // Send the new high score to the backend
+          await axios.post('/update-high-score', { highScore: newScore });
+        }
     }
     let newRow = `<tr><td>${submittedGuess}</td><td>${result}</td></tr>`; // create a new row with two cells
     $resultTable.append(newRow);
